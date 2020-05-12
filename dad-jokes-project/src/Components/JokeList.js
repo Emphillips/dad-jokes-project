@@ -1,5 +1,8 @@
 import React, {Component } from 'react';
 import axios from "axios";
+import Joke from './Joke';
+import { v4 as uuid } from "uuid"; // updated synatx to fix uuid compile error
+import './JokeList.css';
 
 
 class JokeList extends Component {
@@ -10,6 +13,7 @@ class JokeList extends Component {
         super(props);
         this.state = { jokes: [] }; // Jokes place holder
     }
+
     async componentDidMount(){
     // Load Jokes
     let jokes = [];
@@ -17,18 +21,37 @@ class JokeList extends Component {
         let res = await axios.get("https://icanhazdadjoke.com/", {
             headers: {Accept: "application/json"}  // Header added to format in JSON 
         });
-        jokes.push(res.data.joke);
+        jokes.push({ id: uuid(), text: res.data.joke, votes: 0 });
     }
     this.setState({jokes: jokes});
     }
-    
+    handleVote(id, delta) {
+        this.setState(
+            st => ({
+                jokes: st.jokes.map(j =>
+                j.id === id ? {...j, votes: j.votes + delta } : j 
+            )
+            }));
+    }
+
     render() {
         return ( // Jokes display
             <div className="JokeList">
-                <h1>Dad Jokes</h1>
+                <div className="JokeList-sidebar">
+                <h1 className="JokeList-title"><span>Dad</span> Jokes
+                </h1>
+                <img src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg" alt="" />
+                <button className="JokeList-getmore">New Jokes</button>
+                </div>
+                
                 <div className="JokeList-jokes">
                     {this.state.jokes.map(j => (
-                        <div>{j}</div>
+                        <Joke key={j.id} 
+                        votes={j.votes} 
+                        text={j.text} 
+                        upvote={() => this.handleVote(j.id, 1)} 
+                        downvote={() => this.handleVote(j.id, -1)}
+                    />
                     ))}
                 </div>
             </div>
