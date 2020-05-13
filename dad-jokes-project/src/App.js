@@ -4,7 +4,6 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import JokeList from './Components/JokeList';
 import Dashboard from './Components/Dashboard';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -20,8 +19,10 @@ class App extends Component {
             <Route path="/SignUp" component={SignUp} />
             <Route path="/JokeList" component={JokeList} />
           </Switch>
+            
         </div>
       </Router>
+      
     )
   }
 };

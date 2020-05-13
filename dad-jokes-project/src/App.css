@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .Dashboard {
   display: flex;
   align-items: center;
@@ -43,5 +53,14 @@
 .Dash-sidebar img {
    width: 35%;
 }
+
+.brand-logo span{
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+
+
+
 
 
