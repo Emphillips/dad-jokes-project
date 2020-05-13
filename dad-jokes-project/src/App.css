@@ -14,3 +14,18 @@
   );
 }
 
+.navMenu-link {
+  margin: auto 20px;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.navMenu-link:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
