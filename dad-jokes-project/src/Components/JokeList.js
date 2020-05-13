@@ -1,4 +1,4 @@
-import React, {Component } from 'react';
+import React, { Component } from 'react';
 import axios from "axios";
 import Joke from './Joke';
 import { v4 as uuid } from "uuid"; // updated synatx to fix uuid compile error
@@ -36,9 +36,10 @@ class JokeList extends Component {
 
     render() {
         return ( // Jokes display
+        <div className="Joke-app">
             <div className="JokeList">
                 <div className="JokeList-sidebar">
-                <h1 className="JokeList-title"><span>Dad</span> Jokes
+                <h1 className="JokeList-title"><span>Dad</span>Jokes
                 </h1>
                 <img src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg" alt="" />
                 <button className="JokeList-getmore">New Jokes</button>
@@ -55,7 +56,7 @@ class JokeList extends Component {
                     ))}
                 </div>
             </div>
-            
+        </div>
         );
     }
 }

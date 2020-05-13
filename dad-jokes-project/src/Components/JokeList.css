@@ -1,3 +1,12 @@
+.Joke-app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Rubik", sans-serif;
+    color: #78909c;
+     }
+
 .JokeList {
     display: flex;
     width: 80%;
@@ -32,8 +41,8 @@
 
 .JokeList-sidebar img {
     width: 50%;
-    border-radius: 50%;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    /* border-radius: 50%;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1); */
 }
 
 .JokeList-jokes {
