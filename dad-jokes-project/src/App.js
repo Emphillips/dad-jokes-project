@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from './Components/NavBar';
-import SignIn from './Components/SignIn';
-import SignUp from './Components/SignUp';
+import SignIn from './Components/Auth/SignIn';
+import SignUp from './Components/Auth/SignUp';
 import JokeList from './Components/JokeList';
-import Dashboard from './Components/Dashboard';
+import Dashboard from './Components/Dashboard/Dashboard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 

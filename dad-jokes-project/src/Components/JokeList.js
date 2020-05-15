@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios";
 import Joke from './Joke';
 import { v4 as uuid } from "uuid"; // updated synatx to fix uuid compile error
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import './JokeList.css';
 
 
@@ -35,6 +37,10 @@ class JokeList extends Component {
     }
 
     render() {
+        // Guarded Route -- If signed in will show Joke list.
+        const { auth } = this.props;
+        if (!auth.uid) return <Redirect to='/signin' />
+
         return ( // Jokes display
         <div className="Joke-app">
             <div className="JokeList">
@@ -61,4 +67,12 @@ class JokeList extends Component {
     }
 }
 
-export default JokeList;
+// Attach to Props
+const mapStateToProps = (state) => {
+    return {
+      auth: state.firebase.auth
+    }
+  }
+  
+
+export default connect(mapStateToProps) (JokeList);
