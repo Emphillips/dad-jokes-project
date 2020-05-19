@@ -1,0 +1,60 @@
+body {
+  margin: 0px;
+}
+
+.navbar {
+  background-color: #332f2f;
+  width: 100%;
+  height: 70px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+  justify-content: flex-end; 
+  margin: 0px; 
+}
+
+li {
+  font-family: Rubik;
+} 
+
+.title-bar {
+  margin-right: auto;
+  font-size: 10rem;
+}
+
+
+li a {
+ text-decoration: none; 
+}
+
+li a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 450px) {
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 0;
+  }
+  
+  .title-bar {
+    flex-basis: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1127px) {
+  .navbar {
+    flex-direction: column; /* change the direction of the container */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+  }
+}

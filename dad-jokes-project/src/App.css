@@ -17,16 +17,17 @@ main {
 }
 
 .Dash-main {
+  position:absolute;
   display: flex;
   justify-content: center;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
 }
 
 /* Purple back box */
-.Dash-sidebar { 
+/* .Dash-sidebar { 
   background-color: #9575cd;
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -35,9 +36,18 @@ main {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1),
       inset 0 0 25px #7e57c2;
   z-index: 2;
+} */
+.Dash-sidebar {
+  display: grid;
+  background-color: #9575cd;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
 }
 
 .Dash-title {
+    display: flex;
+    align-items: center;
     font-size: 8rem;
     margin: 2rem;
     color: white;
@@ -59,11 +69,35 @@ main {
     letter-spacing: 0;
 }
 
-@media (max-500px) {
-  body {
-    color: white;
-  }
+/* @media screen and (min-width: 967px) and (max-width: 1127px) {
+    .Dashboard {
+    flex-basis: calc(100% / 3);
+    }
+    .Dashboard-main {
+      flex-basis: calc(100% / 3);
+    }
+    .Dash-sidebar {
+      flex-basis: calc(100% / 3);
+    }
+    .Dash-title {
+      flex-basis: calc(100% / 3);
+    }
+    
 }
+
+@media screen and (max-width: 967px) {
+    .Dash-title {
+    flex-basis: calc(50% / 2);
+  }
+} */
+
+/* @media (max-width: 790px){
+  .Dash-title{
+    width:100%;
+    float:inherit;
+  }
+  
+  } */
 
 
 

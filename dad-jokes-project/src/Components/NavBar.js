@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLink';
 import SignedOutLinks from './SignedOutLink';
 import { connect } from 'react-redux';
+import './NavBar.css';
+
 
 
 
@@ -12,10 +14,12 @@ const Navbar = (props) => {
   console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
   return (
-    <nav className="nav-wrapper grey darken-3">
-      <div className="container">
+    <nav className="navbar">
+      <div className="navbar-home">
+      <div className="navbar-link">
             <Link to='/' className="brand-logo"><span>Dad</span>Jokes</Link>
             { links }
+      </div>
       </div>
     </nav>
   )
