@@ -59,6 +59,11 @@ main {
     letter-spacing: 0;
 }
 
+@media (max-500px) {
+  body {
+    color: white;
+  }
+}
 
 
 

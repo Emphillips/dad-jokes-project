@@ -22,7 +22,7 @@ class SignIn extends Component {
 
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/' />
+    if (auth.uid) return <Redirect to='/JokeList' />
     // If you are signed in then it will redirect to Dashboard
 
     return (

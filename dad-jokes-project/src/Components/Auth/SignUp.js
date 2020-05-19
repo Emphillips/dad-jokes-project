@@ -24,7 +24,7 @@ class SignUp extends Component {
   render() {
     // Guarded Route
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/' />
+    if (auth.uid) return <Redirect to='/JokeList' />
     return (
           <div className="container">
             <form onSubmit={this.handleSubmit} className="white">

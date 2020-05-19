@@ -54,3 +54,9 @@ textarea.materialize-textarea:focus:not([readonly]){
 .push {
   height: 50px;
 }
+
+@media (max-500px) {
+  body {
+    color: white;
+  }
+}
