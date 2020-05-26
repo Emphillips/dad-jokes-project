@@ -3,7 +3,7 @@ import Navbar from './Components/NavBar';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
 import JokeList from './Components/JokeList';
-import Dashboard from './Components/Dashboard/Dashboard';
+// import Dashboard from './Components/Dashboard/Dashboard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
         <div className='App'>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={SignIn} />
+            <Route exact path="/" component={SignIn} />   // Default loading screen
             <Route path="/SignIn" component={SignIn} />
             <Route path="/SignUp" component={SignUp} />
             <Route path="/JokeList" component={JokeList} />
